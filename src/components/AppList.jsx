@@ -1,6 +1,8 @@
 import React, { Component } from "react";
+import AppCard from "./applicationPreview";
+import Divider from "./Divider";
 
-class AppCard extends Component {
+class AppList extends Component {
   state = {};
   render() {
     const AppData = [
@@ -82,35 +84,40 @@ class AppCard extends Component {
       },
     ];
     return (
-      <div className="container">
-        <div className="row">
+      <React.Fragment>
+        <h2 className="m-4">App list</h2>
+        <Divider />
+        <div className="list-group">
           {AppData.map((app) => (
-            <div className="col m-3">
-              <div className="card" style={{ width: "12rem" }}>
-                <img src={app.imgsrc} className="card-img-top " alt="..." />
-                <div className="card-body">
-                  <h5 className="card-title">{app.title}</h5>
-                  <p className="card-text">
-                    {app.category}, {app.rating}{" "}
-                    <img
-                      src="http://localhost:3000/bootstrap-icons-1.8.1/star-fill.svg"
-                      alt="rate"
-                      width="15"
-                      height="15"
-                      className="rounded-circle flex-shrink-0"
-                    />
-                  </p>
-                  <a href={app.link} className="btn btn-success">
-                    view & download
-                  </a>
+            <a
+              href="#"
+              className="list-group-item list-group-item-action d-flex gap-3 py-3"
+              aria-current="true"
+            >
+              <img
+                src={app.imgsrc}
+                alt="twbs"
+                width="50"
+                height="50"
+                className="rounded-circle flex-shrink-0"
+              />
+              <div className="d-flex gap-2 w-100 justify-content-between">
+                <div>
+                  <h6 className="mb-0">
+                    {app.title} , {app.category}
+                  </h6>
+                  <p className="mb-0 opacity-75">{app.text1}</p>
                 </div>
+                <small className="opacity-50 text-nowrap">{app.Version}</small>
               </div>
-            </div>
+              <Divider />
+            </a>
           ))}
+          <Divider />
         </div>
-      </div>
+      </React.Fragment>
     );
   }
 }
 
-export default AppCard;
+export default AppList;

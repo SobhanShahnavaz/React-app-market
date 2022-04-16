@@ -12,13 +12,12 @@ class Application extends Component {
       <React.Fragment>
         <NavBar />
         <Breadcrumb />
-        <Divider/>
+        <Divider />
         <Details />
 
-        <Divider/>
-        <Footer/>
-      </React.Fragment> 
-      
+        <Divider />
+        <Footer />
+      </React.Fragment>
     );
   }
 }

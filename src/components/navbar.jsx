@@ -2,13 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 class NavBar extends Component {
   state = {};
-  openNav (){
+  openNav() {
     let hidden = document.getElementById("navbarSupportedContent").className;
-    if (hidden === "collapse navbar-collapse"){
+    if (hidden === "collapse navbar-collapse") {
       hidden = "navbar-collapse";
       document.getElementById("navbarSupportedContent").className = hidden;
-    }
-    else{
+    } else {
       hidden = "collapse navbar-collapse";
       document.getElementById("navbarSupportedContent").className = hidden;
     }
@@ -27,8 +26,8 @@ class NavBar extends Component {
             />
             Play Market
           </a>
-          <button 
-          onClick={this.openNav}
+          <button
+            onClick={this.openNav}
             className="navbar-toggler"
             type="button"
             data-bs-toggle="collapse"
@@ -56,11 +55,41 @@ class NavBar extends Component {
                 </a>
               </li>
               <li className="nav-item">
-                <a className="nav-link " href="/ProjectGoal">
+                <a
+                  className="nav-link "
+                  href="http://localhost:3000/ProjectGoal"
+                >
                   project purpose
                 </a>
               </li>
+              <li className="nav-item">
+                <a className="nav-link " href="http://localhost:3000/Ulogin">
+                  user login
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link " href="http://localhost:3000/register">
+                  register
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link " href="http://localhost:3000/Login">
+                  Administrator panel
+                </a>
+              </li>
+              <li className="nav-item">
+                <a className="nav-link " href="http://localhost:3000/Settings">
+                  <img
+                    src="http://localhost:3000/bootstrap-icons-1.8.1/gear-fill.svg"
+                    alt="settings"
+                    width="28"
+                    height="28"
+                    className="m-s4 flex-shrink-0"
+                  />
+                </a>
+              </li>
             </ul>
+
             <form className="d-flex">
               <input
                 className="form-control me-2"
